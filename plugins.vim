@@ -10,7 +10,6 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'morhetz/gruvbox'
-Plug 'puremourning/vimspector'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'

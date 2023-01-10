@@ -1,6 +1,5 @@
 local opt = {
 	splitright = true,
-	number = true,
 	hlsearch = true,
 	incsearch = true,
 	expandtab = true,
@@ -10,6 +9,8 @@ local opt = {
 	updatetime = 100,
 	hidden = true,
 	autoread = true,
+	number = true,
+	rnu = true,
 	completeopt = "menu,menuone,noselect",
 	mouse = "a",
 	foldlevelstart = 99,
