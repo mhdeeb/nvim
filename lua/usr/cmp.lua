@@ -1,13 +1,17 @@
 local status_ok, plugin = pcall(require, "cmp")
+
 if not status_ok then return end
+
 plugin.setup({
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
+
 	window = {
 	},
+
 	mapping = plugin.mapping.preset.insert({
 		['<C-b>'] = plugin.mapping.scroll_docs(-4),
 		['<C-f>'] = plugin.mapping.scroll_docs(4),
@@ -22,31 +26,54 @@ plugin.setup({
 			end
 		end,
 	}),
-	sources = plugin.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' },
-	}, {
-		{ name = 'buffer' },
-	})
+
+	sources = plugin.config.sources(
+    {
+	  	{ name = 'nvim_lsp' },
+	  	{ name = 'vsnip' },
+	  },
+    {
+	  	{ name = 'buffer' },
+	  }
+  )
 })
+
 plugin.setup.filetype('gitcommit', {
-	sources = plugin.config.sources({
-		{ name = 'plugin_git' },
-	}, {
-		{ name = 'buffer' },
-	})
+	sources = plugin.config.sources(
+    {
+		  {
+        name = 'cmp_git'
+      },
+    },
+    {
+		  {
+        name = 'buffer'
+      },
+	  }
+  )
 })
-plugin.setup.cmdline('/', {
+
+plugin.setup.cmdline({'/', '?'}, {
 	mapping = plugin.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
+		{
+      name = 'buffer'
+    }
 	}
 })
+
 plugin.setup.cmdline(':', {
 	mapping = plugin.mapping.preset.cmdline(),
-	sources = plugin.config.sources({
-		{ name = 'path' }
-	}, {
-		{ name = 'cmdline' }
-	})
+	sources = plugin.config.sources(
+    {
+		  {
+        name = 'path'
+      }
+	  },
+    {
+		  {
+        name = 'cmdline'
+      }
+	  }
+  )
 })
