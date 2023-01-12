@@ -1,6 +1,8 @@
 local opt = {
 	splitright = true,
 	hlsearch = true,
+  cursorline = true,
+  swapfile = false,
 	incsearch = true,
 	expandtab = true,
 	title = true,
@@ -12,12 +14,14 @@ local opt = {
 	number = true,
 	rnu = true,
 	completeopt = "menu,menuone,noselect",
+  backspace = 'indent,eol,start',
 	mouse = "a",
 	foldlevelstart = 99,
 	termguicolors = true,
 	clipboard = "unnamedplus",
 	tabstop = 2,
 	shiftwidth = 2,
+  scrolloff = 4,
 }
 local go = {
 	gruvbox_contrast_dark = 'medium',

@@ -88,4 +88,12 @@ M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 end
 
+local get_python_path = require("usr.func").get_python_path
+
+M.on_init = function(client)
+  if client.name == 'pyright' then
+      client.config.settings.python.pythonPath = get_python_path(client.config.cmd_cwd)
+  end
+end
+
 return M

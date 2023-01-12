@@ -4,6 +4,7 @@ return {
       analysis = {
         typeCheckingMode = "off",
       },
+      pythonPath = nil
     },
   },
 }
