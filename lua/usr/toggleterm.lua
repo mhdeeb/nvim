@@ -15,7 +15,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = true,
-	shell = vim.o.shell,
+	shell = "pwsh",
 	float_opts = {
 		border = "curved",
 		winblend = 0,
@@ -39,10 +39,16 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal = require("toggleterm.terminal").Terminal
+
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
+end
+
+local pwsh = Terminal:new({cmd = "pwsh", hidden = true})
+function _PWSH_TOGGLE()
+  pwsh:toggle()
 end
 
 local node = Terminal:new({ cmd = "node", hidden = true })

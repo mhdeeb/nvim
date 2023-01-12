@@ -36,7 +36,7 @@ local path = require('lspconfig/util').path
 function M.get_python_path(workspace)
   -- Use activated virtualenv.
   if vim.env.VIRTUAL_ENV then
-    return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
+    return path.join(vim.env.VIRTUAL_ENV, 'Scripts', 'python')
   end
 
   -- Find and use virtualenv in workspace directory.
